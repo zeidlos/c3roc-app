@@ -1,15 +1,13 @@
 {
   "name": "c3roc-app",
-  "version": "0.0.1",
+  "version": "0.0.0-development",
   "author": "Ionic Framework",
   "homepage": "http://ionicframework.com/",
   "private": true,
   "scripts": {
-    "clean": "ionic-app-scripts clean",
-    "build": "ionic-app-scripts build",
-    "lint": "ionic-app-scripts lint",
-    "ionic:build": "ionic-app-scripts build",
-    "ionic:serve": "ionic-app-scripts serve"
+    "semantic-release": "semantic-release -e sih-semantic-release-config",
+    "travis-deploy-once": "travis-deploy-once --pro",
+    "test": "echo \"Error: no test specified\" && exit 0"
   },
   "dependencies": {
     "@angular/animations": "5.2.11",
@@ -33,7 +31,16 @@
   },
   "devDependencies": {
     "@ionic/app-scripts": "3.1.10",
+    "commitizen": "^2.10.1",
+    "cz-conventional-changelog": "^2.1.0",
+    "sih-semantic-release-config": "github:sparkassen-hub/sih-semantic-release-config",
+    "travis-deploy-once": "^5.0.0",
     "typescript": "~2.6.2"
   },
-  "description": "An Ionic project"
+  "description": "An Ionic project",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
 }
