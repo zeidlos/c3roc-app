@@ -1,0 +1,23 @@
+<ion-header>
+  
+  <ion-navbar>
+    <ion-title>{{ item.itemName }}</ion-title>
+  </ion-navbar>
+  
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card (click)="goToDetailPage(item)">
+    <ion-card-content>
+      <ul>
+        <li>{{ item.itemType }}</li>
+        <li>{{ item.itemId }}</li>
+        <li>{{ item.serialNumber }}</li>
+      </ul>
+    </ion-card-content>
+  </ion-card>      
+  <button ion-button block (click)="deleteItem(item.itemId, item.itemName)">
+      DELETE
+  </button>
+</ion-content>

@@ -1,0 +1,40 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Add new item</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <form novalidate [formGroup]="createItemForm" (submit)="createItem()">
+    
+    <ion-item>
+      <ion-label stacked>Item Name</ion-label>
+      <ion-input formControlName="itemName" type="text" placeholder="item name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Item ID</ion-label>
+      <ion-input formControlName="itemId" type="text" placeholder="item ID"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Serialnumber</ion-label>
+      <ion-input formControlName="serialNumber" type="text" placeholder="Serialnumber"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Item Type</ion-label>
+      <ion-input formControlName="itemType" type="text" placeholder="Motorola DP2400e"></ion-input>
+    </ion-item>
+
+    <button ion-button block type="submit" [disabled]="!createItemForm.valid">
+      Add Item
+    </button>
+
+  </form>
+
+</ion-content>

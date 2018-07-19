@@ -1,14 +1,29 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      C3ROC Geräteverwaltung
     </ion-title>
   </ion-navbar>
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
 </ion-header>
 
+
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-list>
+    <ion-item *ngFor="let item of itemList | async">
+      <ion-card (click)="goToDetailPage(item)">
+        <ion-card-header>
+          {{ item.itemName }}
+        </ion-card-header>
+        <ion-card-content>
+          <ul>
+            <li>{{ item.itemType }}</li>
+            <li>{{ item.itemId }}</li>
+            <li>{{ item.serialNumber }}</li>
+          </ul>
+        </ion-card-content>
+      </ion-card>      
+    </ion-item>
+  </ion-list>
+  <button ion-button (click)="goToAddItemPage()">Add</button>
 </ion-content>
